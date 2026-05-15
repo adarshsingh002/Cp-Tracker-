@@ -1,0 +1,94 @@
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  animation: slideInDown 0.4s ease;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.navbar-logo {
+  font-size: 1.4rem;
+  color: var(--accent-violet-light);
+  filter: drop-shadow(0 0 8px var(--accent-violet));
+}
+.navbar-brand-text {
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.navbar-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: all var(--transition);
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+.navbar-link:hover {
+  color: var(--text-primary);
+  background: var(--bg-elevated);
+  border-color: var(--border);
+}
+.navbar-link.active {
+  color: var(--accent-violet-light);
+  background: rgba(124,58,237,0.12);
+  border-color: var(--border-accent);
+}
+.navbar-link-icon { font-size: 0.9rem; }
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.navbar-avatar {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-violet), var(--accent-cyan));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fff;
+  box-shadow: 0 0 12px var(--accent-violet-glow);
+}
+.navbar-username {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 700px) {
+  .navbar { padding: 0 16px; }
+  .navbar-username { display: none; }
+  .navbar-link span:last-child { display: none; }
+  .navbar-link { padding: 8px; }
+}

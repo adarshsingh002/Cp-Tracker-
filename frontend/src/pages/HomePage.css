@@ -1,0 +1,195 @@
+.home-page {
+  position: relative;
+  overflow: hidden;
+}
+
+.home-bg-orbs {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.12;
+  animation: float 8s ease-in-out infinite;
+}
+.orb-1 {
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, var(--accent-violet), transparent);
+  top: -200px; left: -150px;
+}
+.orb-2 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, var(--accent-cyan), transparent);
+  bottom: -100px; right: -100px;
+  animation-delay: -4s;
+}
+.orb-3 {
+  width: 350px; height: 350px;
+  background: radial-gradient(circle, #10b981, transparent);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: -2s;
+}
+
+/* ── Hero ── */
+.home-hero {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 48px 0 56px;
+}
+
+.home-welcome-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 6px 18px 6px 8px;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin-bottom: 28px;
+}
+.home-avatar {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-violet), var(--accent-cyan));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.home-title {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+}
+
+.home-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* ── Platform cards ── */
+.home-platforms {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 24px;
+}
+@media (max-width: 720px) { .home-platforms { grid-template-columns: 1fr; } }
+
+.platform-card {
+  text-align: left;
+  padding: 36px 32px;
+  cursor: pointer;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.platform-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+.platform-card--cyan::before  { background: radial-gradient(circle at top left, rgba(6,182,212,0.1), transparent 60%); }
+.platform-card--amber::before { background: radial-gradient(circle at top left, rgba(245,158,11,0.1), transparent 60%); }
+.platform-card:hover::before  { opacity: 1; }
+
+.platform-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+}
+.platform-card--cyan::after  { background: linear-gradient(90deg, var(--accent-cyan), transparent); }
+.platform-card--amber::after { background: linear-gradient(90deg, var(--accent-amber), transparent); }
+
+.platform-card-icon {
+  font-size: 2.4rem;
+  margin-bottom: 4px;
+}
+.platform-card-name {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+.platform-card-tagline {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+.platform-card-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 4px;
+}
+.platform-card-feature {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.platform-check {
+  color: var(--accent-green);
+  font-weight: 700;
+}
+.platform-card-cta {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--accent-violet-light);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap var(--transition);
+}
+.platform-card:hover .platform-card-cta { gap: 10px; }
+
+/* ── Discussions banner ── */
+.home-discuss-banner {
+  position: relative;
+  z-index: 1;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.home-discuss-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.home-discuss-icon { font-size: 2rem; }
+.home-discuss-left h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.home-discuss-left p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
