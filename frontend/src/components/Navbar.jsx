@@ -7,6 +7,7 @@ const NAV_LINKS = [
   { to: '/codeforces',  label: 'Codeforces',  icon: '⚡' },
   { to: '/leetcode',    label: 'LeetCode',    icon: '🧩' },
   { to: '/discussions', label: 'Discuss',     icon: '💬' },
+  { to: '/workspace',   label: 'Workspace',   icon: '⚙' },
 ];
 
 export default function Navbar() {

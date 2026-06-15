@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage.jsx';
 import CodeforcesDashboard from './pages/CodeforcesDashboard.jsx';
 import LeetCodeDashboard from './pages/LeetCodeDashboard.jsx';
 import DiscussionsPage from './pages/DiscussionsPage.jsx';
+import WorkspacePage from './pages/WorkspacePage.jsx';
 import NotFoundPage from './pages/NotFoundPage.jsx';
 
 function ProtectedRoute({ children }) {
@@ -24,6 +25,7 @@ export default function App() {
         <Route path="/codeforces" element={<ProtectedRoute><CodeforcesDashboard /></ProtectedRoute>} />
         <Route path="/leetcode" element={<ProtectedRoute><LeetCodeDashboard /></ProtectedRoute>} />
         <Route path="/discussions" element={<ProtectedRoute><DiscussionsPage /></ProtectedRoute>} />
+        <Route path="/workspace" element={<ProtectedRoute><WorkspacePage /></ProtectedRoute>} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </>

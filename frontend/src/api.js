@@ -38,3 +38,8 @@ export const createDiscussion = (body) =>
 
 export const addAnswer = (id, body) =>
   request(`/discussions/${id}/answers`, { method: 'POST', body: JSON.stringify(body) });
+
+// ── Code Execution ───────────────────────────────────────────
+export const executeCode = (code, language = 'python', stdin = '') =>
+  request('/api/execute', { method: 'POST', body: JSON.stringify({ code, language, stdin }) });
+
